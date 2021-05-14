@@ -1,3 +1,5 @@
+# Projeto :: NetMoovies
+
 NetMoovies, é um projeto inicial para cadastro de Filmes e Usuários, com regras no Model (DataAnnotations), utilizando como BD o MySql, integrando com "EF", projeto no padrão MVC.
 
 - Criando O Projeto em  VS(2019)
