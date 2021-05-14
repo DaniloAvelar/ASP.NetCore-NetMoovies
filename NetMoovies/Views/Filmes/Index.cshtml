@@ -1,0 +1,74 @@
+﻿@*@model IEnumerable<NetMoovies.Models.Filme>*@
+@model NetMoovies.Models.FilmeGeneroViewModel
+
+@{
+    ViewData["Title"] = "Filmes";
+}
+
+<h1>Em Cartaz</h1>
+
+<p>
+    <a asp-action="Create">Novo Filme</a>
+</p>
+
+@*Campo destinado a busca ****@
+<form asp-controller="Filmes" asp-action="Index">
+    <p>
+        Gênero:
+        <select asp-for="filmeGenero" asp-items="Model.generos">
+            <option value="">Todos</option>
+        </select>
+        Título: <input type="text" name="busca" />
+        <input type="submit" value="Pesquisar" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Lancamento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Genero)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Preco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.filmes[0].Classificacao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.filmes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Lancamento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Genero)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Classificacao)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Alterar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

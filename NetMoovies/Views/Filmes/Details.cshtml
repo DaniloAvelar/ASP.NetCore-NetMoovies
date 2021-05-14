@@ -1,0 +1,48 @@
+﻿@model NetMoovies.Models.Filme
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes do filme</h1>
+
+<div>
+    <h4>Filme</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Lancamento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Lancamento)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Genero)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genero)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Preco)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Classificacao)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Classificacao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Alterar</a> |
+    <a asp-action="Index">Voltar para a lista</a>
+</div>
